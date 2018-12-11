@@ -1,0 +1,23 @@
+name: googleimagesdownload
+base: core18
+version: 'git'
+summary: Download hundreds of images from Google Images
+description: |
+ This is a command line python program to search keywords/key-phrases on
+ Google Images and optionally download images to your computer
+
+grade: stable
+confinement: strict
+
+parts:
+  googleimagesdownload:
+    plugin: python
+    source: .
+
+apps:
+  googleimagesdownload:
+    command: bin/googleimagesdownload
+    plugs:
+      - home
+      - network
+      - removable-media
